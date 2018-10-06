@@ -46,15 +46,7 @@ include "fungsi.php";
         <?php
             if(isset($_GET['reverse']) AND $_GET['kalimat'] != null){
                 $normal = $_GET['kalimat'];
-                $reverse = strrev($normal);
-
-                echo $reverse, "<br>";
-
-                if($normal == $reverse){
-                    echo "Palindrome";
-                } else{
-                    echo "Tidak Palindrome";
-                }
+               revpalindrom($normal);
             } elseif(isset($_GET['reverse']) AND $_GET['kalimat'] != null){
                 echo "isi kolom dengan kalimat atau kata";
             }
@@ -72,11 +64,7 @@ include "fungsi.php";
         <?php
             if(isset($_GET['biner']) AND $_GET['input_biner']){
                 $angka = $_GET['input_biner'];
-                $binernya = decbin($angka);
-                $trimmed = trim($binernya, "0");
-                $meledak = explode("1", $trimmed);
-                $itung = array_map('strlen', $meledak);
-                echo max($itung);
+                binergap($angka);
             }
         ?>
     </div>

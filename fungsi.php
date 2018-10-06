@@ -10,4 +10,24 @@
             $b = $c;
         }
     }
+
+    function revpalindrom($kalimat){
+        $reverse = strrev($kalimat);
+
+        echo $reverse, "<br>";
+
+        if($kalimat == $reverse){
+            echo "Palindrome";
+        } else{
+            echo "Tidak Palindrome";
+        }
+    }
+
+    function binergap($angka){
+        $binernya = decbin($angka);
+        $trimmed = trim($binernya, "0");
+        $meledak = explode("1", $trimmed);
+        $itung = array_map('strlen', $meledak);
+        echo max($itung);
+    }
 ?>
