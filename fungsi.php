@@ -75,4 +75,16 @@
             echo "<br>";
         }
     }
+
+    function hitung_bunga($saldo, $bunga, $periode){
+
+        for($x = 0; $x < $periode; $x++){
+            $bulanke = $x + 1;
+            $hasil = (($saldo * $bunga / 100) / 12) + $saldo;
+            $bulatkan = round($hasil, 2);
+            $duit =  number_format($bulatkan,2,",",".");
+            echo "Bulan" . $bulanke . " = " . $duit . "<br>";
+            $saldo = $bulatkan;
+        }
+    }
 ?>
